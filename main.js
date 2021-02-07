@@ -2,7 +2,7 @@ function menuOrder() {
     const menu = document.getElementById('search-meal-field').value;
     console.log(menu);
     mealName(menu);
-
+    document.getElementById('search-meal-field').value = "";
 }
 
 function mealName(mealName) {
@@ -42,6 +42,8 @@ function mealName(mealName) {
 
 
         })
+       
+      
 }
 
 function MealDetails(id) {
@@ -74,6 +76,7 @@ function MealDetails(id) {
 
 
         })
+        
 
 }
 
@@ -82,5 +85,8 @@ function IngredientsList(item){
         console.log(item);
         element = `${item + i}`;
         console.log(element);
+        console.log("test");
     }
 }
+
+
