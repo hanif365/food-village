@@ -1,6 +1,6 @@
 function menuOrder() {
     const menu = document.getElementById('search-meal-field').value;
-    console.log(menu);
+    // console.log(menu);
     mealName(menu);
     document.getElementById('search-meal-field').value = "";
 }
@@ -9,15 +9,15 @@ function mealName(mealName) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
 
             const showMeal = document.getElementById('display-meal');
 
             for (let i = 0; i < data.meals.length; i++) {
                 const menuItem = data.meals[i];
-                console.log(menuItem);
-                console.log(menuItem.strMeal);
-                console.log(menuItem.idMeal);
+                // console.log(menuItem);
+                // console.log(menuItem.strMeal);
+                // console.log(menuItem.idMeal);
 
                 const mealItem = document.createElement('div');
                 mealItem.className = 'col';
@@ -53,8 +53,40 @@ function MealDetails(id) {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-
             const displayDetails = document.getElementById('display-details-info');
+
+            document.getElementById('show-img').src = data.meals[0].strMealThumb;
+            // console.log(data.meals[0].strIngredient1);
+            // console.log(data['meals']['0'][`strIngredient${1}`]);
+
+            //////////////////////COmment out
+            let count = 0;
+            for(i=1;i<=20;i++){
+                const content = data['meals']['0'][`strMeasure${i}`] +' '+ data['meals']['0'][`strIngredient${i}`];
+                console.log(content);
+                if(data['meals']['0'][`strIngredient${i}`] == ""){
+                    break;
+                }
+                // count++;
+                const list1 = document.createElement('li');
+
+                list1.innerHTML = content;
+                displayDetails.appendChild(list1);
+
+            }
+
+            ///////////////////////////////////////
+            // console.log(count);
+
+            // for(i=1;i<=count;i++){
+
+            // }
+            // console.log(data.meals[0].strMeasure1 +' '+  data.meals[0].strIngredient1);
+
+            //
+            // const displayDetails = document.getElementById('display-details-info');
+
+
             // displayDetails.innerText = data.meals[0].strArea;
 
         //     const displayInfo = `
