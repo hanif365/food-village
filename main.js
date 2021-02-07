@@ -40,17 +40,47 @@ function mealName(mealName) {
 
             }
 
-            
+
         })
 }
 
 function MealDetails(id) {
-    console.log('ID : ',id);
+    console.log('ID : ', id);
 
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
 
+            const displayDetails = document.getElementById('display-details-info');
+            // displayDetails.innerText = data.meals[0].strArea;
+
+        //     const displayInfo = `
+                
+        //         <div class="mb-3">
+        //             <img src="${data.meals[0].strMealThumb}" class="mb-3" alt="...">
+        //             <div>
+        //                 <h4>${data.meals[0].strMeal}</h4>
+        //                 <h5>Ingredients</h5>
+        //                 <h6 onclick = "IngredientsList('${data.meals[0].strIngredient1}')">hello</h6>
+                       
+                        
+        //             </div>
+        //         </div>
+        // `;
+        //     displayDetails.innerHTML = displayInfo;
+
+        
+
+
+        })
+
+}
+
+function IngredientsList(item){
+    for(i=1;i<=20;i++){
+        console.log(item);
+        element = `${item + i}`;
+        console.log(element);
+    }
 }
