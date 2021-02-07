@@ -58,18 +58,26 @@
         </div>
     </section>
 
-    <section>
+    <section id="display-details">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div id="display-details-info">
                         <img id="show-img" src="" alt="">
-                        <h2>Ingredients</h2>
+                        <h3>Food Origin : <span id="food-area"></span></h3>
+                        <h4>Ingredients</h4>
                         <ul id="ul-container">
-
+                            <li id="li-ingredient-1"></li>
+                            <li id="li-ingredient-2"></li>
+                            <li id="li-ingredient-3"></li>
+                            <li id="li-ingredient-4"></li>
+                            <li id="li-ingredient-5"></li>
+                            <li id="li-ingredient-6"></li>
                         </ul>
-                        
                     </div>
+                    <h4>Making Process :</h4>
+                    <p id="making-process"></p>
+                    <button id="close-btn" onclick="closeDisplayDetails()" class="btn btn-success">Close</button>
                 </div>
 
             </div>
@@ -85,13 +93,6 @@
 
         </div>
     </section>
-
-
-
-
-
-
-
 
 
     <script src="main.js"></script>
